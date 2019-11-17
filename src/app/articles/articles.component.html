@@ -1,12 +1,12 @@
 <section class="section">
     <div class="container">
-        <div class="column is-multiline" *ngIf="articles">
-            <div class="columns is-5" ngFor="let article of articles | async" *>
-                <div class="card center">
+        <div class="articles" *ngIf="articles">
+            <div class="" *ngFor="let article of articles">
+                <div class="card center article">
                     <div class="card-content">
-                        <!-- <a routerLink="/articles/{{ articles.title }}">
-                            {{articles.title}}
-                        </a> -->
+                        <a routerLink="/articles/{{ articles.abstract }}">
+                            {{article.abstract}}
+                        </a>
                     </div>
                 </div>
             </div>

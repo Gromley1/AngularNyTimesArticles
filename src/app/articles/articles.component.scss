@@ -1,9 +1,14 @@
-.center {
+
+
+.articles {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     
+ 
 }
 
-.margin {
-    margin-left: 15vw;
+.article {
+    width: 50vw;
+    
 }
