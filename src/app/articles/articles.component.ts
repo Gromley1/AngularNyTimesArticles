@@ -7,7 +7,6 @@ import { ArticlesService } from '../../services/articles.service'
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
-  // public articles: Array<Article> = [];
   articles;
 
   constructor(private Articles: ArticlesService) { }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticlesService {
   apiUrl = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json'
-  apiKey = 'PpaXrCXZer0QXYWtCYEmryDQ0tmxLoZH'
+  apiKey = 'api-key'
 
   constructor(private http: HttpClient) { }
 
