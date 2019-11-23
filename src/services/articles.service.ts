@@ -5,12 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ArticlesService {
-  apiUrl = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json'
+  apiUrl = 'https://api.nytimes.com/svc/'
   apiKey = 'api-key'
 
   constructor(private http: HttpClient) { }
 
   getArticles() {
-    return this.http.get(`${this.apiUrl}?api-key=${this.apiKey}`)
+    return this.http.get(`${this.apiUrl}mostpopular/v2/viewed/1.json?api-key=${this.apiKey}`)
+  }
+
+  searchArticles() {
+    return this.http.get(`${this.apiUrl}search/v2/articlesearch.json?api-key=${this.apiKey}&q=clinton`)
   }
 }

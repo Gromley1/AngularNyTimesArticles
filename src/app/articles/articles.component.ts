@@ -8,15 +8,22 @@ import { ArticlesService } from '../../services/articles.service'
 })
 export class ArticlesComponent implements OnInit {
   articles;
+  articleQuery;
+
 
   constructor(private Articles: ArticlesService) { }
 
   ngOnInit() {
     this.Articles.getArticles()
       .subscribe(data => {
-        this.articles = data
-        this.articles = this.articles.results
-        console.log(this.articles)
+        this.articles = data['results']
       })
+
+    this.Articles.searchArticles()
+      .subscribe(data => {
+        this.articleQuery = data['response'].docs
+        console.log(this.articleQuery)
+      })
+
   }
 }
