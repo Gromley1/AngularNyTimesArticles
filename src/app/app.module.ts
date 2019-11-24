@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { ArticlesService } from 'src/services/articles.service';
+import { ArticlesService } from 'src/app/services/articles.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArticlesService } from 'src/services/articles.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ArticlesService

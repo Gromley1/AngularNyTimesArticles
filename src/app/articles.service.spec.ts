@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ArticlesService } from '../services/articles.service';
+import { ArticlesService } from './services/articles.service';
 
 describe('ArticlesService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

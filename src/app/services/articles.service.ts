@@ -14,7 +14,7 @@ export class ArticlesService {
     return this.http.get(`${this.apiUrl}mostpopular/v2/viewed/1.json?api-key=${this.apiKey}`)
   }
 
-  searchArticles() {
-    return this.http.get(`${this.apiUrl}search/v2/articlesearch.json?api-key=${this.apiKey}&q=clinton`)
+  searchArticles(q: string) {
+    return this.http.get(`${this.apiUrl}search/v2/articlesearch.json?api-key=${this.apiKey}&q=${q}`)
   }
 }

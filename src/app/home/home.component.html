@@ -1,11 +1,35 @@
-<section class="hero is-fullheight is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title has-text-white">
-                Welcome to Article Buddy, a quick and easy way to access popular articles.
-                Article Buddy access's the New York times api to display the most emailed,
-                shared or viewed articles on any given day.
-            </h1>
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline" *ngIf="articles">
+            <div class="column is-3" *ngFor="let article of articles">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{article.media[0]['media-metadata'][2].url}}" alt="media image">
+                        </figure>
+                    </div>
+                    <div class=card-header>
+                        <div class=card-header-title>
+                            {{article.title}}
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-5">
+                                    {{article.byline !== "" ? article.byline.substr(3) : 'John Smith'}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            {{article.abstract}}
+                            <br>
+                            <time>{{article.published_date}}</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from '../../services/articles.service'
+import { ArticlesService } from 'src/app/services/articles.service';
+
 
 @Component({
   selector: 'app-articles',
@@ -8,22 +9,31 @@ import { ArticlesService } from '../../services/articles.service'
 })
 export class ArticlesComponent implements OnInit {
   articles;
-  articleQuery;
+  q: string
 
 
   constructor(private Articles: ArticlesService) { }
 
   ngOnInit() {
-    this.Articles.getArticles()
-      .subscribe(data => {
-        this.articles = data['results']
-      })
-
-    this.Articles.searchArticles()
-      .subscribe(data => {
-        this.articleQuery = data['response'].docs
-        console.log(this.articleQuery)
-      })
 
   }
+
+  onKeyChange() {
+    this.queryArticles(this.q)
+  }
+
+
+  queryArticles(q) {
+    this.Articles.searchArticles(q)
+      .subscribe(data => {
+        this.articles = data['response'].docs
+        console.log(this.articles)
+        //console.log(q)
+      })
+  }
+
 }
+
+
+
+
